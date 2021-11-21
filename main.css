@@ -29,8 +29,8 @@ html,body {
 
 .lightbulbContainer {
     background: #353575;
-    width: 85vw;
-    height: 85vw;
+    width: 30vh;
+    height: 30vh;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -41,14 +41,14 @@ html,body {
 }
 
 .lightbulbContainer img {
-    width: 70vw;
+    width: 20vh;
     height: auto;
 }
 
 .nextContainer {
     background-color: #394088;
-    width: 75vw;
-    height: 60vw;
+    width: 30vh;
+    height: 20vh;
     border-radius: 10vw;
     display: flex;
     flex-direction: column;
@@ -66,14 +66,15 @@ html,body {
 }
 
 .nextContainer img {
-    width: 40vw;
+    width: 15vh;
     height: auto;
 }
 
 .nextContainer p {
     margin: 0px;
     color: white;
-    font-size: 9.5vw;
+    font-size: 3vh;
+    margin-bottom: 0.5vh;
     font-family: 'Roboto', sans-serif;
 }
 
