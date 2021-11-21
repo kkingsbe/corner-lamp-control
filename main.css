@@ -56,6 +56,13 @@ html,body {
     justify-content: space-around;
     z-index: 1;
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.349);
+    transition: background 0.8s;
+}
+
+.nextContainer:active {
+    background-color: #6eb9f7;
+    background-size: 100%;
+    transition: background 0s;
 }
 
 .nextContainer img {

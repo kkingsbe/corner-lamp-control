@@ -1,7 +1,6 @@
 //Lightbulb Stuff
 let power = true
 let lightbulb = document.getElementById("lightbulb")
-let nextBtn = document.getElementById("nextContainer")
 lightbulb.onclick = function(e) {
     pop(e)
     lightbulb.innerHTML = ""
@@ -16,10 +15,6 @@ lightbulb.onclick = function(e) {
     lightbulb.appendChild(bulbImg)
 }
 
-nextBtn.onclick = function(e) {
-    popNext(e)
-}
-
 //Button Particle Stuff
 if (document.body.animate) {
     // If yes, we add a click listener on our button
@@ -31,20 +26,6 @@ function pop(e) {
     for (let i = 0; i < 30; i++) {
         // We pass the mouse coordinates to the createParticle() function
         createParticle(lightbulb.offsetLeft + lightbulb.offsetWidth / 2, lightbulb.offsetTop + lightbulb.offsetHeight / 2);
-    }
-    }
-    function createParticle(x, y) {
-    // Create a custom particle element
-    const particle = document.createElement('particle');
-    // Append the element into the body
-    document.body.appendChild(particle);
-}
-
-function popNext(e) {
-    // Loop to generate 30 particles at once
-    for (let i = 0; i < 30; i++) {
-        // We pass the mouse coordinates to the createParticle() function
-        createParticle(nextBtn.offsetLeft + nextBtn.offsetWidth / 2, nextBtn.offsetTop + nextBtn.offsetHeight / 2);
     }
     }
     function createParticle(x, y) {
