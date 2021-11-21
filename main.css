@@ -69,3 +69,12 @@ html,body {
     font-size: 9.5vw;
     font-family: 'Roboto', sans-serif;
 }
+
+particle {
+    border-radius: 50%;
+    left: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+}
