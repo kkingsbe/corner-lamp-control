@@ -60,7 +60,7 @@ html,body {
 }
 
 .nextContainer:active {
-    background-color: #6eb9f7;
+    background-color: #7077c4;
     background-size: 100%;
     transition: background 0s;
 }
