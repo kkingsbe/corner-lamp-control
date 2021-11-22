@@ -119,3 +119,4 @@ async function changeMode() {
 
 setInterval(getToken, 20000);
 getToken()
+console.log(token)
