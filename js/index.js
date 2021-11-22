@@ -1,3 +1,5 @@
+let token = ""
+
 //Lightbulb Stuff
 let power = true
 let lightbulb = document.getElementById("lightbulb")
@@ -13,6 +15,8 @@ lightbulb.onclick = function(e) {
         bulbImg.setAttribute("src","res/light-bulb off.png")
     }
     lightbulb.appendChild(bulbImg)
+
+    togglePower()
 }
 
 //Button Particle Stuff
@@ -27,8 +31,9 @@ function pop(e) {
         // We pass the mouse coordinates to the createParticle() function
         createParticle(lightbulb.offsetLeft + lightbulb.offsetWidth / 2, lightbulb.offsetTop + lightbulb.offsetHeight / 2);
     }
-    }
-    function createParticle(x, y) {
+}
+
+function createParticle(x, y) {
     // Create a custom particle element
     const particle = document.createElement('particle');
     // Append the element into the body
@@ -76,3 +81,41 @@ function createParticle (x, y) {
         particle.remove();
     };
 }
+
+async function getToken() {
+    var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+    };
+    
+    await fetch("https://k1g6yaddtb.execute-api.us-east-1.amazonaws.com/get-arduino-token?client_id=ihZKO7wc5DCOoObneJ10U5khmXP9YpLe&client_secret=bP6i6SOkV1mfBPPMfbfcZkawljMOdUzj7wWEwzaCXg2zmRgKxm4RYePABnyy6Nai", requestOptions)
+        .then(response => response.text())
+        .then(result => token = result)
+        .catch(error => console.log('error', error));
+}
+
+async function togglePower() {
+    var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+    };
+    
+    fetch(`https://k1g6yaddtb.execute-api.us-east-1.amazonaws.com/ChangePower?power=${power}&token=${token}`, requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+}
+
+async function changeMode() {
+    var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+    };
+    
+    fetch(`https://k1g6yaddtb.execute-api.us-east-1.amazonaws.com/SwitchMode?token=${token}`, requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+}
+
+setInterval(getToken(), 60000);
