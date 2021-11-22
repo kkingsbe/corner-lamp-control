@@ -107,6 +107,7 @@ async function togglePower() {
 }
 
 async function changeMode() {
+    console.log(token)
     var requestOptions = {
         method: 'GET',
         redirect: 'follow'
@@ -116,4 +117,4 @@ async function changeMode() {
         .catch(error => console.log('error', error));
 }
 
-setInterval(getToken(), 10000);
+setInterval(getToken, 20000);
