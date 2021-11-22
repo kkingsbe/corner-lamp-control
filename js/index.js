@@ -118,4 +118,4 @@ async function changeMode() {
         .catch(error => console.log('error', error));
 }
 
-setInterval(getToken(), 60000);
+setInterval(getToken(), 10000);
