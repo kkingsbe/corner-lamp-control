@@ -3,8 +3,10 @@ let token = ""
 //Lightbulb Stuff
 let power = true
 let lightbulb = document.getElementById("lightbulb")
-
-alert("This controls an actual lamp in my room. Please do not use unless given permission.")
+let passInput = document.getElementById("passinput")
+let passEnter = document.getElementById("passenter")
+let passMobile = document.getElementById("passwordModal")
+let password = "sarah"
 
 lightbulb.onclick = function(e) {
     pop(e)
@@ -20,6 +22,12 @@ lightbulb.onclick = function(e) {
     lightbulb.appendChild(bulbImg)
 
     togglePower()
+}
+
+passEnter.onclick = function(e) {
+    if(passInput.value == password) {
+        passMobile.setAttribute("style","display:none;")
+    }
 }
 
 //Button Particle Stuff
