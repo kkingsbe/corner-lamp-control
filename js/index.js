@@ -3,6 +3,9 @@ let token = ""
 //Lightbulb Stuff
 let power = true
 let lightbulb = document.getElementById("lightbulb")
+
+alert("This controls an actual lamp in my room. Please do not use unless given permission.")
+
 lightbulb.onclick = function(e) {
     pop(e)
     lightbulb.innerHTML = ""
